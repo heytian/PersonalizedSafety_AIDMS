@@ -1,14 +1,5 @@
 # Personalized Safety in LLMs — A Benchmark and a Planning-Based Agent Approach
 
-> Official implementation of the **NeurIPS 2025** paper  
-> **“Personalized Safety in LLMs: A Benchmark and a Planning-Based Agent Approach”**  
-> by *Yuchen Wu, Edward Sun, Kaijie Zhu, Jianxun Lian, José Hernandez-Orallo, Aylin Caliskan†, and Jindong Wang†*  
-> († co-corresponding authors)
-
-[![Paper](https://img.shields.io/badge/arXiv-2505.18882-red.svg)](https://arxiv.org/abs/2505.18882)
-[![Conference](https://img.shields.io/badge/NeurIPS-2025-blue.svg)](#)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](#license)
-
 ---
 
 ## 🌐 Overview
@@ -16,6 +7,95 @@
 This repository provides the **benchmark** and **planning-based agent** implementation for evaluating *personalized safety* in large language models (LLMs).  
 We introduce a benchmark spanning **7 high-risk domains** and propose **RAISE (Risk-Aware Information Selection Engine)** —  
 a planning-based agent that strategically collects user background information to enhance safety under limited interaction budgets.
+
+---
+
+## 🚀 **Quick Start**
+
+**Want to test your LLM on personalized safety?** 
+
+### 📖 Documentation
+
+- **[TESTING_AND_ANALYSIS.md](TESTING_AND_ANALYSIS.md)** - Testing your LLM and analyzing results
+- **[DATA_GENERATION.md](DATA_GENERATION.md)** - How the dataset was generated
+
+**Three simple steps:**
+
+```bash
+# 1. Generate dataset (once)
+python generate_expanded_dataset.py
+
+# 2. Analyze dataset quality
+python analyze_dataset.py --all
+
+# 3. Test your LLM
+python evaluate_llm_example.py --limit 100
+```
+
+**Results:** Saved to `results/<run_id>/` with detailed metrics per phase.
+
+---
+
+## 🧪 **Testing Your LLM**
+
+**Want to evaluate your LLM on personalized safety?** We've expanded the original dataset to 42,500 scenarios across 4 phases.
+
+📖 **[TESTING_AND_ANALYSIS.md](TESTING_AND_ANALYSIS.md)** - Complete guide to testing and analysis  
+📖 **[DATA_GENERATION.md](DATA_GENERATION.md)** - How the dataset was generated  
+💻 **[evaluate_llm_example.py](evaluate_llm_example.py)** - Ready-to-run script
+
+**Quick test (2 ways):**
+
+**Option 1: Use .env file (easiest):**
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Set up .env file
+cp env.template .env
+# Edit .env with your API key
+
+# 3. Run evaluation
+python evaluate_llm_example.py --limit 50
+```
+
+**Option 2: Specify LLM via command-line:**
+```bash
+# OpenAI GPT-4o
+python evaluate_llm_example.py --llm-provider openai --llm-model gpt-4o --limit 50
+
+# Anthropic Claude
+python evaluate_llm_example.py --llm-provider anthropic --llm-model claude-3-5-sonnet-20241022 --limit 50
+
+# Custom/local model
+python evaluate_llm_example.py --llm-provider openai --llm-model llama-3-70b --llm-base-url http://localhost:8000/v1 --limit 50
+```
+
+**Analyze results:**
+```bash
+# View dataset statistics
+python analyze_dataset.py --all
+
+# View Phase 3 adversarial quality
+python analyze_dataset.py --phase3
+```
+
+**Supported providers:** OpenAI, Anthropic, Azure OpenAI, and any OpenAI-compatible API
+
+⭐ **Updated: 3 evaluation phases** - personalization effect, safety discrimination, domain expertise
+
+---
+
+## 📊 **Expanded Dataset (42,500 Scenarios)**
+
+| Phase | Scenarios | Purpose |
+|-------|-----------|---------|
+| **Phase 1** | 10,500 | Base test cases with personalized attributes |
+| **Phase 2** | 10,500 | Personalization testing (context-free vs context-rich) |
+| **Phase 3** | 21,000 | Safety discrimination (unsafe vs safe responses) |
+| **Phase 4** | 500 | Domain expertise (Healthcare, Legal, Finance, etc.) |
+
+See [DATASET_EXPANSION_README.md](DATASET_EXPANSION_README.md) for details on how the dataset was generated.
 
 ---
 
@@ -213,7 +293,7 @@ User Query,Attribute Path,Path Length
 
 ## 📚 Citation
 
-If you use this work, please cite:
+This work, was insipred by:
 
 ```bibtex
 @article{wu2025personalizedsafety,
