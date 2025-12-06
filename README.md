@@ -34,6 +34,8 @@ python evaluate_llm_example.py --limit 100
 
 **Results:** Saved to `results/<run_id>/` with detailed metrics per phase.
 
+**Note as of Dec 6, 2025:** Step 1 completed with dataset saved at this [Google Drive link](https://drive.google.com/file/d/1gQFvaWqPuwL5B3KMJLAlKn2PMtZnSmeF/view?usp=drive_link). Hence, just drag that into the root folder and run step 2 above in terminal.  
+
 ---
 
 ## 🧪 **Testing Your LLM**
@@ -293,7 +295,7 @@ User Query,Attribute Path,Path Length
 
 ## 📚 Citation
 
-This work, was insipred by:
+This work, was inspired by:
 
 ```bibtex
 @article{wu2025personalizedsafety,
