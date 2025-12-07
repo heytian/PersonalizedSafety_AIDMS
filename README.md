@@ -1,15 +1,5 @@
 # Personalized Safety in LLMs — A Benchmark and a Planning-Based Agent Approach
 
----
-
-## 🌐 Overview
-
-This repository provides the **benchmark** and **planning-based agent** implementation for evaluating *personalized safety* in large language models (LLMs).  
-We introduce a benchmark spanning **7 high-risk domains** and propose **RAISE (Risk-Aware Information Selection Engine)** —  
-a planning-based agent that strategically collects user background information to enhance safety under limited interaction budgets.
-
----
-
 ## 🚀 **Quick Start**
 
 **Want to test your LLM on personalized safety?** 
