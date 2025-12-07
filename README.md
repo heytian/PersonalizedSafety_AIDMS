@@ -24,7 +24,7 @@ python evaluate_llm_example.py --limit 100
 
 **Note as of Dec 7, 2025:** Step 1 above (synthetic data generation) has been completed with expanded dataset here: [10.5281/zenodo.17848957](10.5281/zenodo.17848957). Download this dataset and drag that into the root folder and run step 2 above in terminal.  
 
-This project builds upon work and code by **Yuchen Wu et al.** (see citation at the end) which are documented at personalized-safety.github.io/. This repo was also previously forked from https://github.com/jordanabinader/PersonalizedSafety-.git 
+This project builds upon work and code by **Yuchen Wu et al.** (see citation at the end) which are documented at [personalized-safety.github.io/](personalized-safety.github.io/). This repo was also previously forked from https://github.com/jordanabinader/PersonalizedSafety-.git 
 
 ---
 
