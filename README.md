@@ -22,7 +22,7 @@ python evaluate_llm_example.py --limit 100
 
 **Results:** Saved to `results/<run_id>/` with detailed metrics per phase.
 
-**Note as of Dec 6, 2025:** Step 1 completed with dataset saved at this [Google Drive link](https://drive.google.com/file/d/1gQFvaWqPuwL5B3KMJLAlKn2PMtZnSmeF/view?usp=drive_link). Hence, just drag that into the root folder and run step 2 above in terminal.  
+**Note as of Dec 7, 2025:** Step 1 above (synthetic data generation) has been completed with expanded dataset here: [10.5281/zenodo.17848957](10.5281/zenodo.17848957). Download this dataset and drag that into the root folder and run step 2 above in terminal.  
 
 This project builds upon work and code by **Yuchen Wu et al.** (see citation at the end) which are documented at personalized-safety.github.io/
 
